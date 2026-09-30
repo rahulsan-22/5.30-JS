@@ -38,41 +38,53 @@
 // console.log(typeof snacks); //object (historical bug in js)
 
 //!6) BigInt
-let amount = 12345678912345678912345n
-console.log(amount) //12345678912345678912345n
-console.log(typeof amount) //bigint
+// let amount = 12345678912345678912345n
+// console.log(amount) //12345678912345678912345n
+// console.log(typeof amount) //bigint
 
 //!7) Symbol
-let trainer = Symbol("Monty");
-let model = Symbol("Monty");
-console.log(trainer == model) //false
-console.log(trainer) //Symbol(Monty)
-console.log(typeof trainer) //symbol
+// let trainer = Symbol("Monty");
+// let model = Symbol("Monty");
+// console.log(trainer == model) //false
+// console.log(trainer) //Symbol(Monty)
+// console.log(typeof trainer) //symbol
 
 //!Non - Primitive / Reference Datatypes
 
 //!1) Arrays -- used to store multiple d/f values
-let snacks = ["Samosa", "Kachori", "PaniPuri"]
-let user = ["Pavan", 26, true, null, undefined]
-console.log(snacks) //["Samosa", "Kachori", "PaniPuri"]
-console.log(typeof snacks) //object
-console.log(user) //["Pavan", 26, true, null, undefined]
-console.log(typeof user) //object
+// let snacks = ["Samosa", "Kachori", "PaniPuri"]
+// let user = ["Pavan", 26, true, null, undefined]
+// console.log(snacks) //["Samosa", "Kachori", "PaniPuri"]
+// console.log(typeof snacks) //object
+// console.log(user) //["Pavan", 26, true, null, undefined]
+// console.log(typeof user) //object
 
 //!2) Objects -- used to store in the form of key-value pair
-let obj = {
-  title: "Jim-Jam",
-  category: "Biscuit",
-  price:10
-}
-console.log(obj) //{title: 'Jim-Jam', category: 'Biscuit', price: 10}
-console.log(typeof obj) //object
+// let obj = {
+//   title: "Jim-Jam",
+//   category: "Biscuit",
+//   price:10
+// }
+// console.log(obj) //{title: 'Jim-Jam', category: 'Biscuit', price: 10}
+// console.log(typeof obj) //object
 
 //!3) Functions -- resuable block of code used to perform a specific task
-function askQuestion() {
-  console.log("Are you guys feeling bored ?")
-}
-askQuestion()
-askQuestion()
-askQuestion()
-console.log(typeof askQuestion)
+// function askQuestion() {
+//   console.log("Are you guys feeling bored ?")
+// }
+// askQuestion()
+// askQuestion()
+// askQuestion()
+// console.log(typeof askQuestion) //function
+
+//!Mutable vs Immutable
+
+//!String (Primitive)
+let str = "late"
+str[0] = "p"
+console.log(str) //late (Strings are immutable i.e cannot be changed after creation)
+
+//!Array (Non-Primitive)
+let arr = ["lift", "traffic", "bus", "petrol"]
+arr[2] = "puncture"
+console.log(arr) //['lift', 'traffic', 'puncture', 'petrol'] (Arrays are mutable i.e can be changed after creation)
