@@ -5,28 +5,28 @@
 //!1)Normal Function
 //simple task
 //*Example 1:
-function normal() {
-  console.log("Wake up Guys....")
-}
-normal()
+// function normal() {
+//   console.log("Wake up Guys....")
+// }
+// normal()
 
 //*Example 2:
-function findingPow() {
-  console.log(2**3)
-}
-findingPow()
+// function findingPow() {
+//   console.log(2**3)
+// }
+// findingPow()
 
 //!2)Parameterized Function
 //accepts the value inside the fn through parameters
 //arguments - are the values passed during function call
 //parameters - are the variables that accepts the arguments
-function findingProduct(a,b) {
-  console.log(a*b)
-}
-findingProduct(2,5)
-findingProduct(3)
-findingProduct()
-findingProduct(1, 2, 3)
+// function findingProduct(a,b) {
+//   console.log(a*b)
+// }
+// findingProduct(2,5)
+// findingProduct(3)
+// findingProduct()
+// findingProduct(1, 2, 3)
 
 //!3)Return Function
 //It is the function that sends a value back using return keyword
@@ -34,15 +34,91 @@ findingProduct(1, 2, 3)
 //value sent by the return keyword can be stored in a variable or used later.
 
 //*Example 1:
-function greet() {
-  return "Hello Manoj"
-}
-let result = greet()
-console.log(result)
+// function greet() {
+//   return "Hello Manoj"
+// }
+// let result = greet()
+// console.log(result)
 
 //*Example 2:
-function food(item) {
-  return "My fav food is "+item
-}
-console.log(food("Biryani"))
-console.log(food("Mandi"))
+// function food(item) {
+//   return "My fav food is "+item
+// }
+// console.log(food("Biryani"))
+// console.log(food("Mandi"))
+
+//!Function Expression
+//are those where a function is stored inside a variable.
+//In Function Expression, functions are treated as values.
+
+//!1)Anonymous Function
+//are those which doesnot have a function name.
+//mostly used as callback fn
+
+//*Example 1:
+// let anonymous1 = function () {
+//   console.log("Ac Working....")
+// }
+// anonymous1()
+
+//*Example 2:
+// let anonymous2 = function(firstName,lastName) {
+//   return "My fullname is "+firstName+" "+lastName
+// }
+// console.log(anonymous2("Virat","Kohli"))
+// console.log(anonymous2("Rohit","Sharma"))
+
+//!2) Arrow Function
+// ES6(2015)
+// provide shorter syntax to design a fn
+// doesnot have function keyword as well as function name
+// mostly used in modern js and react.js
+
+//*Example 1:
+// let arrow1 = () => {
+//   console.log("I am arrow function...")
+// }
+// arrow1()
+
+//*Example 2:
+// let arrow2 = (a, b) => {
+//   console.log(a - b)
+// }
+// arrow2(50, 30)
+// arrow2(70, 10)
+
+//*Types (Based on return keyword)
+
+//@1)Explicit Return Arrow function
+//To return a value in arrow fn if we use return keyword it is explicit return arrow function
+// let findingPow1 = (a,b) => {
+//   return a**b
+// }
+// console.log(findingPow1(2,3))
+
+//@2)Implicit Return Arrow function
+// To return a value in arrow fn if we dont use return keyword it is implicit return arrow function
+// curly braces should not be used
+// single line expressions
+// let findingPow2 = (a,b) => a**b
+// console.log(findingPow2(2,3))
+
+//!3)Immediately Invoked Function Expression (IIFE)
+//fn should be executed immediately after creation.
+//these type of fn are wrapped inside a () and should be called using the same ()
+//single time use
+//avoid global scope pollution.
+
+//*Example 1
+(function normal() {
+  console.log("I am Normal IIFE")
+})();
+
+//*Example 2:
+(function (a, b) {
+  console.log(a + b)
+})(2, 3);
+
+//*Example 3:
+let result = ((a, b) => a ** b)
+console.log(result(2,3))
