@@ -62,33 +62,99 @@
 //! 1)Array.isArray()
 // This method checks weather the given value is an Array or not
 // If it is an array it returns true else false
-console.log(Array.isArray("Manoj")) //false
-console.log(Array.isArray(["Manoj"])) //true
-console.log(Array.isArray({})) //false
-console.log(Array.isArray([])) //true
+// console.log(Array.isArray("Manoj")) //false
+// console.log(Array.isArray(["Manoj"])) //true
+// console.log(Array.isArray({})) //false
+// console.log(Array.isArray([])) //true
 
 //! 2)toString()
 // Converts Array to String
-let luggage = ["Brush","FaceWash","Clothes","Bedsheet"]
-console.log(luggage.toString()) //Brush,FaceWash,Clothes,Bedsheet
-console.log(typeof luggage.toString()) //string
+// let luggage = ["Brush","FaceWash","Clothes","Bedsheet"]
+// console.log(luggage.toString()) //Brush,FaceWash,Clothes,Bedsheet
+// console.log(typeof luggage.toString()) //string
 
 //! 3)concat()
 // Combines multiple arrays into a single array
-let frontend = ["Html", "Css", "Js"]
-let backend = ["Java", "Python"]
-let database = ["Sql"]
-console.log(frontend.concat("React.js",backend,database)) //['Html', 'Css', 'Js', 'React.js', 'Java', 'Python', 'Sql']
+// let frontend = ["Html", "Css", "Js"]
+// let backend = ["Java", "Python"]
+// let database = ["Sql"]
+// console.log(frontend.concat("React.js",backend,database)) //['Html', 'Css', 'Js', 'React.js', 'Java', 'Python', 'Sql']
 
 //! 4)join(separator)
 // Converts array to string by combining multiple elements with the separator in between.
-let festivals = ["Dasara", "Diwali", "Christmas", "Sankranthi"]
-console.log(festivals.join("-")) //Dasara-Diwali-Christmas-Sankranthi
-console.log(festivals.join(" ")) //Dasara Diwali Christmas Sankranthi
+// let festivals = ["Dasara", "Diwali", "Christmas", "Sankranthi"]
+// console.log(festivals.join("-")) //Dasara-Diwali-Christmas-Sankranthi
+// console.log(festivals.join(" ")) //Dasara Diwali Christmas Sankranthi
 
 //! 5)reverse()
 // Reverses the array
-let foodStall = ["Parata", "Chicken 65", "Boneless Fish"];
-console.log(foodStall.reverse()) //['Boneless Fish', 'Chicken 65', 'Parata']
+// let foodStall = ["Parata", "Chicken 65", "Boneless Fish"];
+// console.log(foodStall.reverse()) //['Boneless Fish', 'Chicken 65', 'Parata']
 
+//! 6)includes(searchElement,startIndex)
+// Checks whether searchElement is present or not in the given original Array
+// If present it returns true else returns false.
+// startIndex defines from where the element should be searched.
+// Negative Index is supported.
+// let dasara = ["Chicken", "Mutton", "Fish", "Prawns", "Chicken", "Mutton", "Kallu"]
+// console.log(dasara.includes("Prawns")) //true
+// console.log(dasara.includes("Bobbatu")) //false
+// console.log(dasara.includes("Mutton",1)) //true
+// console.log(dasara.includes("Fish",4)) //false
+// console.log(dasara.includes("Fish",-5)) //true
+// console.log(dasara.includes("Fish", -100)) //true
 
+//! 7)indexOf(searchElement,startIndex)
+// returns the index of the first occurence of the searchElement from the original Array
+// If present it returns its index value else returns -1.
+// startIndex defines from where the element should be searched.
+// Negative Index is supported.
+// let bonalu = ["Chicken", "Mutton", "Fish", "Prawns", "Chicken", "Mutton", "Kallu"]
+// console.log(bonalu.indexOf("Prawns")) //3
+// console.log(bonalu.indexOf("Bobbatu")) //-1
+// console.log(bonalu.indexOf("Mutton",1)) //1
+// console.log(bonalu.indexOf("Fish",4)) //-1
+// console.log(bonalu.indexOf("Chicken",-5)) //4
+// console.log(bonalu.indexOf("Chicken",-100)) //0
+
+//!8)slice(startIndex,endIndex)
+// used to extract a portion of an array and return a new array.
+// startIndex is inclusive where endIndex is exclusive
+// Negative index is supported
+// If startIndex is greater than endIndex it return empty array []
+// let sweets = ["Jalebi", "Kalakand", "Laddu", "SoanPapdi", "Kaju", "Rasmalai"]
+// console.log(sweets.slice(3)) //["SoanPapdi", "Kaju", "Rasmalai"]
+// console.log(sweets.slice(2,4)) //['Laddu', 'SoanPapdi']
+// console.log(sweets.slice(4,5)) //['Kaju']
+// console.log(sweets.slice(4,4)) //[]
+// console.log(sweets.slice(1,-2)) //['Kalakand', 'Laddu', 'SoanPapdi']
+// console.log(sweets.slice(-5,-3)) //['Kalakand', 'Laddu']
+// console.log(sweets.slice(-100,1)) //['Jalebi']
+// console.log(sweets.slice(5,2)) //[]
+// console.log(sweets.slice(-2,-5)) //[]
+
+//!9)splice(startIndex,deleteCount,elementsToBeAdded)
+// modify the array elements
+// returns the array of deleted elements
+// affects the original array
+// negative start index is supported
+
+//*Adding Elements
+let sports = ["Cricket", "Hockey", "VolleyBall", "FootBall"]
+console.log(sports.splice(2, 0, "Badminton", "Kabbadi")) //[]
+console.log(sports) //['Cricket', 'Hockey', 'Badminton', 'Kabbadi', 'VolleyBall', 'FootBall']
+
+//*Deleting Elements
+let hobbies = ["Sleeping", "Cooking", "Scrolling", "Chatting", "Reading"]
+console.log(hobbies.splice(2, 2)) //['Scrolling', 'Chatting']
+console.log(hobbies) //['Sleeping', 'Cooking', 'Reading']
+
+//*Modifying Elements 1
+let cars = ["Kia", "Thar", "Bmw", "Audi", "Tesla"]
+console.log(cars.splice(0, 2, "Alto", "Nano", "Verna")) //['Kia', 'Thar']
+console.log(cars) //['Alto', 'Nano', 'Verna', 'Bmw', 'Audi', 'Tesla']
+
+//*Modifying Elements 2
+let bikes = ["Ktm", "Tvs", "GT", "Pulsar", "Honda", "Splendor"]
+console.log(bikes.splice(-3, 100, "Chetak")) //["Pulsar", "Honda", "Splendor"]
+console.log(bikes) //['Ktm', 'Tvs', 'GT', 'Chetak']
