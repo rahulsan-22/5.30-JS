@@ -140,21 +140,92 @@
 // negative start index is supported
 
 //*Adding Elements
-let sports = ["Cricket", "Hockey", "VolleyBall", "FootBall"]
-console.log(sports.splice(2, 0, "Badminton", "Kabbadi")) //[]
-console.log(sports) //['Cricket', 'Hockey', 'Badminton', 'Kabbadi', 'VolleyBall', 'FootBall']
+// let sports = ["Cricket", "Hockey", "VolleyBall", "FootBall"]
+// console.log(sports.splice(2, 0, "Badminton", "Kabbadi")) //[]
+// console.log(sports) //['Cricket', 'Hockey', 'Badminton', 'Kabbadi', 'VolleyBall', 'FootBall']
 
 //*Deleting Elements
-let hobbies = ["Sleeping", "Cooking", "Scrolling", "Chatting", "Reading"]
-console.log(hobbies.splice(2, 2)) //['Scrolling', 'Chatting']
-console.log(hobbies) //['Sleeping', 'Cooking', 'Reading']
+// let hobbies = ["Sleeping", "Cooking", "Scrolling", "Chatting", "Reading"]
+// console.log(hobbies.splice(2, 2)) //['Scrolling', 'Chatting']
+// console.log(hobbies) //['Sleeping', 'Cooking', 'Reading']
 
 //*Modifying Elements 1
-let cars = ["Kia", "Thar", "Bmw", "Audi", "Tesla"]
-console.log(cars.splice(0, 2, "Alto", "Nano", "Verna")) //['Kia', 'Thar']
-console.log(cars) //['Alto', 'Nano', 'Verna', 'Bmw', 'Audi', 'Tesla']
+// let cars = ["Kia", "Thar", "Bmw", "Audi", "Tesla"]
+// console.log(cars.splice(0, 2, "Alto", "Nano", "Verna")) //['Kia', 'Thar']
+// console.log(cars) //['Alto', 'Nano', 'Verna', 'Bmw', 'Audi', 'Tesla']
 
 //*Modifying Elements 2
-let bikes = ["Ktm", "Tvs", "GT", "Pulsar", "Honda", "Splendor"]
-console.log(bikes.splice(-3, 100, "Chetak")) //["Pulsar", "Honda", "Splendor"]
-console.log(bikes) //['Ktm', 'Tvs', 'GT', 'Chetak']
+// let bikes = ["Ktm", "Tvs", "GT", "Pulsar", "Honda", "Splendor"]
+// console.log(bikes.splice(-3, 100, "Chetak")) //["Pulsar", "Honda", "Splendor"]
+// console.log(bikes) //['Ktm', 'Tvs', 'GT', 'Chetak']
+
+//!Higher Order Methods
+
+//*1)forEach(function(element,index,array))
+// let mobile = ["Samsung", "Oppo", "Nokia", "Vivo"]
+// mobile.forEach((element, index, array) => {
+//   console.log(element.toLowerCase())
+//   console.log(element.length)
+//   console.log(index)
+//   console.log(array)
+// })
+
+//*2)map(function(element,index,array))
+// let laptops = ["Samsung", "Oppo", "Nokia", "Vivo"]
+// laptops.map((element, index, array) => {
+//   console.log(element.toLowerCase())
+//   console.log(element.length)
+//   console.log(index)
+//   console.log(array)
+// })
+
+//* forEach() vs map()
+// let numbers = [2, 5, 10]
+
+// let forEachOutput = numbers.forEach((num) => {
+//   return num * num
+// })
+// console.log(forEachOutput) //undefined
+
+// let mapOutput = numbers.map((num) => {
+//   return num * num
+// })
+// console.log(mapOutput) //[4,25,100]
+
+//*3)filter(fn(element,index,array))
+// let marks = [45, 75, 90, 35, 15]
+// let filteredMarks = marks.filter((ele) => {
+//   return ele > 50
+// })
+// console.log(filteredMarks) //[75,90]
+
+//*4)find(fn(element,index,array))
+// let findMarks = marks.find((ele) => {
+//   return ele > 50
+// })
+// console.log(findMarks) //75
+
+//*5)some(fn(element,index,array))
+// let someMarks = marks.some((ele) => {
+//   return ele > 50
+// })
+// console.log(someMarks) //true
+
+//*6)every(fn(element,index,array))
+// let everyMarks = marks.every((ele) => {
+//   return ele > 50
+// })
+// console.log(everyMarks) //true
+
+//*7)reduce(fn(accumulator,element,index,array),initialValue)
+// let integers = [1, 2, 3, 4, 5];
+// let result = integers.reduce((sum,ele) => {
+//   return sum+=ele
+// }, 0)
+// console.log(result)
+
+//*8)sort(compareFn)
+let numbers = [5, 1,10,45,333,3, 2, 4]
+console.log(numbers.sort()) //[1, 10, 2, 3, 333, 4, 45, 5]
+console.log(numbers.sort((a,b)=>a-b)) //[1, 2, 3, 4, 5, 10, 45, 333]
+console.log(numbers.sort((a,b)=>b-a)) //[333, 45, 10, 5, 4, 3, 2, 1]
