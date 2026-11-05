@@ -132,3 +132,41 @@ let bom15 = () => {
     console.log(position.coords.longitude)
   })
 }
+
+//!Web Storage Systems
+
+//!sessionStorage
+
+//*setItem()
+sessionStorage.setItem("name","Manoj")
+sessionStorage.setItem("age",23)
+sessionStorage.setItem("place", "Bihar")
+
+//*getItem()
+console.log(sessionStorage.getItem("name"))
+console.log(sessionStorage.getItem("age"))
+console.log(sessionStorage.getItem("isMarried"))
+
+//*removeItem()
+sessionStorage.removeItem("place")
+
+//*clear()
+sessionStorage.clear()
+
+//!localStorage
+
+//*setItem()
+localStorage.setItem("name","Manoj")
+localStorage.setItem("age",23)
+localStorage.setItem("place", "Bihar")
+
+//*getItem()
+console.log(localStorage.getItem("name"))
+console.log(localStorage.getItem("age"))
+console.log(localStorage.getItem("isMarried"))
+
+//*removeItem()
+localStorage.removeItem("place")
+
+//*clear()
+localStorage.clear()
