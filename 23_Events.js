@@ -40,13 +40,57 @@
 // })
 
 //!Event Object
-let form = document.querySelector('form')
-form.addEventListener("submit", (e) => {
-  e.preventDefault()
+// let form = document.querySelector('form')
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault()
+//   console.log(e)
+//   console.log(e.target)
+//   console.log(e.type)
+//   console.log(e.target[1].value)
+//   console.log(e.target[2].value)
+//   console.log("Logged in Successfully 🥳")
+// })
+
+//!Focus,Input,Change,Blur
+// let inputTag = document.getElementById("searchField");
+
+//*Focus
+// inputTag.addEventListener("focus", (e) => {
+//   e.target.style.outline = "2px solid red"
+// })
+
+//*Input
+// inputTag.addEventListener("input", (e) => {
+//   console.log(e.target.value)
+// })
+
+//*Change
+// inputTag.addEventListener("change", (e) => {
+//   e.target.style.height="200px"
+// })
+
+//*Blur
+// inputTag.addEventListener("blur", (e) => {
+//    e.target.style.outline = "2px solid green"
+// })
+
+//! Keyup and keydown
+let textarea = document.querySelector("textarea");
+
+//*keyup
+textarea.addEventListener("keyup", (e) => {
   console.log(e)
-  console.log(e.target)
-  console.log(e.type)
-  console.log(e.target[1].value)
-  console.log(e.target[2].value)
-  console.log("Logged in Successfully 🥳")
+  console.log("Key is UP")
+})
+
+//*keydown
+textarea.addEventListener("keydown", (e) => {
+  console.log(e)
+  console.log("Key is DOWN")
+})
+
+//!DOMContentloaded
+document.addEventListener("DOMContentLoaded", (e) => {
+  console.log(e)
+  console.log("Dom Created")
 })
