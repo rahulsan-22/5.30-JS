@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#outer {
+  height: 400px;
+  width: 400px;
+  background-color: yellow;
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#inner {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  border: 5px solid black;
+}

@@ -75,22 +75,77 @@
 // })
 
 //! Keyup and keydown
-let textarea = document.querySelector("textarea");
+// let textarea = document.querySelector("textarea");
 
 //*keyup
-textarea.addEventListener("keyup", (e) => {
-  console.log(e)
-  console.log("Key is UP")
-})
+// textarea.addEventListener("keyup", (e) => {
+//   console.log(e)
+//   console.log("Key is UP")
+// })
 
 //*keydown
-textarea.addEventListener("keydown", (e) => {
-  console.log(e)
-  console.log("Key is DOWN")
-})
+// textarea.addEventListener("keydown", (e) => {
+//   console.log(e)
+//   console.log("Key is DOWN")
+// })
 
 //!DOMContentloaded
-document.addEventListener("DOMContentLoaded", (e) => {
-  console.log(e)
-  console.log("Dom Created")
+// document.addEventListener("DOMContentLoaded", (e) => {
+//   console.log(e)
+//   console.log("Dom Created")
+// })
+
+//!Event Propagation
+// It is the process of travelling of events from one element to another.
+
+//!Phases of Event Propagation
+
+// let outer = document.getElementById("outer")
+// let inner = document.getElementById("inner")
+
+//*1)Event Bubbling Phase
+// Propagation of Event from target element to parent element.
+// outer.addEventListener("click", () => {
+//   alert("Outer Box Clicked 💥")
+// },false)
+
+// inner.addEventListener("click", () => {
+//   alert("Inner Box Clicked 🥳")
+// },false)
+
+//*2)Event Capturing Phase
+// Propagation of Event from Parent element to target element.
+// outer.addEventListener("click", () => {
+//   alert("Outer Box Clicked 💥")
+// },true)
+
+// inner.addEventListener("click", () => {
+//   alert("Inner Box Clicked 🥳")
+// }, true)
+
+//!Interview
+//If one is true and the other is false it always starts from true value
+// outer.addEventListener("click", () => {
+//   alert("Outer Box Clicked 💥")
+// },false)
+
+// inner.addEventListener("click", () => {
+//   alert("Inner Box Clicked 🥳")
+// },true)
+
+//!stopProgation()
+// outer.addEventListener("click", () => {
+//   alert("Outer Box Clicked 💥")
+// },false)
+
+// inner.addEventListener("click", (e) => {
+//   alert("Inner Box Clicked 🥳")
+//   e.stopPropagation()
+// },false)
+
+//!Event Delegation
+//Attaching single event to the parent instead of attachinh to indvidual child elements
+let courses = document.getElementById("courses")
+courses.addEventListener("click", (e) => {
+  console.log(e.target.innerHTML)
 })
