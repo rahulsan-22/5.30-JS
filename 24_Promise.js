@@ -36,32 +36,77 @@
 // })
 
 //!Promise Chaining
-Promise.resolve(10)
-  .then((res) => {
-   return res*2
-  }).then((res) => {
-    return res/4
-  }).then((res) => {
-    console.log(res)
-  })
+// Promise.resolve(10)
+//   .then((res) => {
+//    return res*2
+//   }).then((res) => {
+//     return res/4
+//   }).then((res) => {
+//     console.log(res)
+//   })
 
 //!Promise.resolve()
-Promise.resolve("Hello")
+// Promise.resolve("Hello")
+//   .then((res) => {
+//     console.log(res)
+//   })
+
+//!Promise.reject()
+// Promise.reject("Bye")
+//   .catch((err) => {
+//     console.log(err)
+//   })
+
+//!Promise.all()
+// Promise.all([
+//   Promise.resolve("Html"),
+//   Promise.resolve("Css"),
+//   Promise.resolve("Js")
+// ]).then((res) => {
+//   console.log(res)
+// })
+
+//!Promise.race() -- returns the first promise that gets settled
+Promise.race([
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      return resolve("First")
+    }, 3000)
+  }),
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      return resolve("Second")
+    }, 1000)
+  })
+])
   .then((res) => {
     console.log(res)
   })
 
-//!Promise.reject()
-Promise.reject("Bye")
-  .catch((err) => {
-    console.log(err)
+
+//!Promise.allSettled() -- returns all promises irrespective of fulfilled or rejected
+Promise.allSettled([
+  Promise.resolve(10),
+  Promise.reject(20),
+  Promise.resolve(30)
+])
+  .then((res) => {
+    console.log(res)
   })
 
-//!Promise.all()
-Promise.all([
-  Promise.resolve("Html"),
-  Promise.resolve("Css"),
-  Promise.resolve("Js")
-]).then((res) => {
-  console.log(res)
-})
+//!Promise.any() -- returns the first fulfilled promise
+Promise.any([
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      return reject("First")
+    }, 3000)
+  }),
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      return reject("Second")
+    }, 1000)
+  })
+])
+  .then((res) => {
+    console.log(res)
+  })
