@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>Registration Form 💥</legend>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name">
+      <br><br>
+      <label for="email">Email:</label
+      <input type="email" name="email" id="email">
+      <br><br>
+      <label for="phone">Phone:</label>
+      <input type="tel" name="phone" id="phone">
+      <br><br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password">
+      <i class="fa-solid fa-eye" id="passwordEye"></i>
+      <br><br>
+      <label for="cpassword">Confirm Password:</label>
+      <input type="password" name="cpassword" id="cpassword">
+      <i class="fa-solid fa-eye" id="cpasswordEye"></i>
+      <br><br>
+      <p id="error_info"></p>
+      <input type="submit" value="Register">
+    </fieldset>
+  </form>
+  <script src="./27_FormValidation.js"></script>
+</body>
+</html>
